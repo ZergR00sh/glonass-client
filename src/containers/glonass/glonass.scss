@@ -10,6 +10,9 @@ html, body, .b-app, .b-glonass {
     height: 100%;
     width: 100%;
     font-size: 18px;
+    @media only screen and (min-width : 1120px) {
+        font-size: 20px;
+    }
     font-family: Arial, Courier, sans;
     overflow: hidden;
 }

@@ -1,13 +1,12 @@
 .b-header, .b-header-wrapper {
     z-index: 10000;
-    height: 4em;
+    height: 3em;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #e74c3c;
-    line-height: 4em;
-    border-bottom: 1px solid red;
+    line-height: 3em;
     transition: left 0.5s;
 }
 
@@ -24,14 +23,14 @@
     position: absolute;
     top: 0;
     left: 0;    
-    padding: 0 4em;
-    line-height: 4em;
+    padding: 0 3em;
+    line-height: 3em;
     text-align: center;
     @media only screen and (min-width : 1120px) {
       padding: 0 275px;
     }
     &__text {
-        font-size: 2.3em;
+        font-size: 1.8em;
         font-family: 'Lobster';
         color: white;
     }
@@ -42,8 +41,8 @@
     left: 0;
     top: 0;
     background-color: #e74c3c;
-    width: 4em;
-    height: 4em;
+    width: 3em;
+    height: 3em;
     display: block;
     color: white;
     cursor: pointer;
