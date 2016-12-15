@@ -3,7 +3,11 @@
         "jsx": true,
         "modules": true,
         "spread" : true,
-        "restParams" : true
+        "restParams" : true,
+        "experimentalObjectRestSpread": true
+    },
+    "globals": {
+        "React": true
     },
     "extends": "google",
     "installedESLint": true,

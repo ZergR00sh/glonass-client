@@ -1,0 +1,60 @@
+.b-header, .b-header-wrapper {
+    z-index: 10000;
+    height: 4em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e74c3c;
+    line-height: 4em;
+    border-bottom: 1px solid red;
+    transition: left 0.5s;
+}
+
+.b-header.b-header--active {
+        @media only screen and (min-width : 1120px) {
+          left: 0;
+        }
+        left: 275px;
+        transition: left 0.5s;
+}
+
+.b-logo {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;    
+    padding: 0 4em;
+    line-height: 4em;
+    text-align: center;
+    @media only screen and (min-width : 1120px) {
+      padding: 0 275px;
+    }
+    &__text {
+        font-size: 2.3em;
+        font-family: 'Lobster';
+        color: white;
+    }
+}
+
+.b-burger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #e74c3c;
+    width: 4em;
+    height: 4em;
+    display: block;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    @media only screen and (min-width : 1120px) {
+      display: none;
+    }
+    &__symbol {
+        font-size: 2em;
+    }
+    &:active {
+        background-color: #DC4435;
+    }
+}

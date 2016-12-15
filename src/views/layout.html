@@ -3,27 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>glonass</title>
-  <link 
-    rel="shortcut icon" 
-    type="image/png"
-    href="<%- require('../images/favicon.png') %>"
-  />
   <link
     rel="stylesheet"
     type="text/css"
     href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
   />
-  <meta name="theme-color" content="#db5945">
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"
+  />
+  <meta
+    name="theme-color"
+    content="#e74c3c"
+  />
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  />
+  <link
+    rel="shortcut icon" 
+    type="image/png"
+    href="<%- require('../images/favicon.png') %>"
   />
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
-  <h1><%= htmlWebpackPlugin.options.env %></h1>
   <div class="b-app" id="js-mount-point"></div>
 </body>
 </html>

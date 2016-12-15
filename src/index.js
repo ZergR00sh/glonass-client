@@ -1,6 +1,6 @@
-import './styles/main.scss';
-console.log('hello, from docker');
-console.log((() => 12)());
-console.log((() => 13)());
-console.log((() => 14)());
-console.log((() => 15)());
+import React from 'react';
+import {render} from 'react-dom';
+import mountPoint from './utils/mount-point';
+import GlonassRouter from './router/index.react';
+
+render(<GlonassRouter/>, mountPoint);

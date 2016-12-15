@@ -1,0 +1,8 @@
+.b-workspace {
+    padding-top: 4em;
+    height: 100%;
+    @media only screen and (min-width : 1120px) {
+      padding-left: 275px;
+      transition: padding-left 0.5s;
+    }
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body, .b-app, .b-glonass {
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    font-family: Arial, Courier, sans;
+    overflow: hidden;
+}
