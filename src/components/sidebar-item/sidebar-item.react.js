@@ -16,7 +16,7 @@ export default function SidebarItem({
         + (choosen ? ' b-sidebar-item--choosen' : '')}
       onClick={onSidebarItemClick}
       {...props}>
-      {device.name} <i className="b-speed">{device.speed || 0}km/h</i>
+      {device.name} <i className="b-speed">{device.speed || 0} km/h</i>
     </a>
   );
 }
