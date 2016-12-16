@@ -22,7 +22,7 @@ export default class Glonass extends Component {
         devices: [],
         sidebar: false,
         search: '',
-        choosenDeviceImei: '',
+        choosenDevices: [],
     };
     this.onBurgerClick = this._onBurgerClick.bind(this);
     this.onGeoStateChanged = this._onGeoStateChanged.bind(this);
@@ -48,9 +48,12 @@ export default class Glonass extends Component {
    * @param  {Array} devices geo api array of devices
    */
   _onGeoStateChanged({devices}) {
-    console.info(devices);
     this.setState(Object.assign(this.state, {
       devices,
+      choosenDevices: devices
+        .filter((device) =>
+          !!this.state.choosenDevices.find((choosenDevice) =>
+            choosenDevice.imei == device.imei)),
     }));
   }
   /**
@@ -79,9 +82,13 @@ export default class Glonass extends Component {
    * @param  {Object} device tracked device
    */
   _onSidebarItemClick(device) {
-    let enabled = device.imei == this.state.choosenDeviceImei;
+    let enabled = !!this.state.choosenDevices.find((cd) =>
+      cd.imei == device.imei);
     this.setState(Object.assign(this.state, {
-      choosenDeviceImei: enabled ? '' : device.imei,
+      choosenDevices: enabled ?
+        this.state.choosenDevices.filter((cd) =>
+          cd.imei != device.imei)
+        : this.state.choosenDevices.concat(device),
     }));
   }
   /**
@@ -95,7 +102,7 @@ export default class Glonass extends Component {
       key={i}
       device={device}
       onSidebarItemClick={this._onSidebarItemClick.bind(this, device)}
-      choosen={device.imei == this.state.choosenDeviceImei}
+      choosen={!!this.state.choosenDevices.find((d) => device.imei == d.imei)}
     />;
   }
   /**
@@ -105,7 +112,7 @@ export default class Glonass extends Component {
   _onSearch(search) {
     this.setState(Object.assign(this.state, {
       search,
-      choosenDeviceImei: '',
+      choosenDevices: [],
     }));
   }
   /**
@@ -117,8 +124,7 @@ export default class Glonass extends Component {
          <div className="b-glonass">
             <Workspace>
                 <GlonassMap
-                  devices={this.state.devices}
-                  filter={this.state.choosenDeviceImei}
+                  devices={this.state.choosenDevices}
                 />
             </Workspace>
             <Darkness

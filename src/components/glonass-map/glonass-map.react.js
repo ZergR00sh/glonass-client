@@ -9,7 +9,7 @@ import {
  * Glonass map component
  * @return {React.Component}
  */
-export default function GlonassMap({devices, filter}) {
+export default function GlonassMap({devices}) {
   console.log(devices);
   return (
     <Map
@@ -24,7 +24,6 @@ export default function GlonassMap({devices, filter}) {
         + ' <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}
       />
       {devices
-        .filter((device) => device.imei == filter)
         .map((device, i) => {
           return (
             <Marker
