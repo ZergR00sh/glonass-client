@@ -8,9 +8,8 @@ WORKDIR /app
 
 COPY package.json /app/
 
-RUN npm install --no-optional
-
-RUN npm install webpack -g --no-optional
+RUN npm install --no-optional &&
+	npm install webpack -g --no-optional
 
 COPY . /app
 
